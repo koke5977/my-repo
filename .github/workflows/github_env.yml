@@ -1,8 +1,8 @@
-name: Missing share data
-on: workflow_dispatch
+name: GITHUB_ENV
+on: push
 jobs:
   share:
     runs-on: ubuntu-latest
     steps:
-      - run: export RESULT="hello"
+      - run: echo "RESULT=Hello" >> "${GITHUB_ENV}"
       - run: echo "${RESULT}"
